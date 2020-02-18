@@ -28,32 +28,32 @@ source devel/setup.bash
 ```
 
 ## Packages
-* OpenCV
-* Turtlebot3
+> * OpenCV
+> * Turtlebot3
 
-## OpenCV Installation
-#### Installing Dependencies
-In a terminal run the following commands:
-```
-sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
+### OpenCV Installation
+* #### Installing Dependencies
+  In a terminal run the following commands:
+  ```
+  sudo apt install build-essential cmake git pkg-config libgtk-3-dev \
     libavcodec-dev libavformat-dev libswscale-dev libv4l-dev \
     libxvidcore-dev libx264-dev libjpeg-dev libpng-dev libtiff-dev \
     gfortran openexr libatlas-base-dev python3-dev python3-numpy \
     libtbb2 libtbb-dev libdc1394-22-dev
 
-sudo apt-get install build-essential checkinstall cmake pkg-config yasm gfortran git
-sudo apt-get install libjpeg8-dev libjasper-dev libpng12-dev
-```
-#### Downloading and Installing
-```
-git clone https://github.com/opencv/opencv.git
-git clone https://github.com/opencv/opencv_contrib.git
-```
-At the time of install, OpenCV version 4.2.0 was available
-```
-cd opencv
-mkdir build && cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
+  sudo apt-get install build-essential checkinstall cmake pkg-config yasm gfortran git
+  sudo apt-get install libjpeg8-dev libjasper-dev libpng12-dev
+  ```
+* #### Downloading and Installing
+  ```
+  git clone https://github.com/opencv/opencv.git
+  git clone https://github.com/opencv/opencv_contrib.git
+  ```
+  At the time of install, OpenCV version 4.2.0 was available
+  ```
+  cd opencv
+  mkdir build && cd build
+  cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D CMAKE_INSTALL_PREFIX=/usr/local \
       -D INSTALL_C_EXAMPLES=ON \
       -D WITH_TBB=ON \
@@ -62,15 +62,17 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
       -D BUILD_EXAMPLES=ON ..
 
-# find out number of CPU cores in your machine
-nproc
-# substitute 4 by output of nproc
-make -j4
-sudo make install
-sudo sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
-sudo ldconfig
-```
-## Getting Turtlebot3 packages
+  # find out number of CPU cores in your machine
+  nproc
+
+  # substitute 4 by output of nproc
+  make -j4
+  sudo make install
+  sudo sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
+  sudo ldconfig
+  ```
+
+### Turtlebot3 packages
 You will need certain packages of Turtlebot3 for this project. They can be added using the following commands:
 ```
 cd <catkin workspace>
@@ -78,7 +80,7 @@ source devel/setup.bash
 cd src/
 git clone -b melodic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 git clone -b melodic-devel https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
-git clone -b melodic-develhttps://github.com/ROBOTIS-GIT/turtlebot3.git
+git clone -b melodic-devel https://github.com/ROBOTIS-GIT/turtlebot3.git
 cd ..
 catkin_make
 ```
