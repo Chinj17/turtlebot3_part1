@@ -1,0 +1,8 @@
+<launch>
+    <!-- image_read launch file -->
+    <node pkg="image_read"
+        type="image_read"
+        name="image_read"
+        output="screen">
+    </node>
+</launch>
