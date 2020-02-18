@@ -23,6 +23,6 @@ CATKIN_DEPENDS cv_bridge geometry_msgs image_transport roscpp sensor_msgs std_ms
 
 include_directories(include/mobile_robot ${catkin_INCLUDE_DIRS})
 
-add_executable(mobile_robot src/main.cpp src/Obstacle.cpp src/image_converter.cpp)
+add_executable(mobile_robot src/main.cpp src/Obstacle.cpp)
 
 target_link_libraries(mobile_robot ${OpenCV_LIBS} ${catkin_LIBRARIES})
