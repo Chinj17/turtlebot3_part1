@@ -1,0 +1,12 @@
+<launch>
+  <!-- mobile_robot launch file -->
+  <node pkg="mobile_robot"
+        type="mobile_robot"
+        name="mobile_robot"
+        output="screen">
+  </node>
+  <!-- finding the sample world to launch in gazebo -->
+  <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_sample.launch" />
+  <!-- finding the image_read package -->
+  <include file="$(find image_read)/launch/image_read.launch" />
+</launch>
