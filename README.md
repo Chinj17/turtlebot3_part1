@@ -96,3 +96,10 @@ cd <path to repository>
 cp -r mobile_robot /home/<User>/<catkin workspace>/src
 cp -r image_read /home/<User>/<catkin workspace>/src
 ```
+Building and running the project. In a new terminal type the following
+```
+cd <catkin workspace>
+source devel/setup.bash
+catkin_make
+roslaunch mobile_robot mobile_robot.launch
+```
